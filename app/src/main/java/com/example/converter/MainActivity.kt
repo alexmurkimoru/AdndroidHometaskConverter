@@ -10,30 +10,35 @@ import android.widget.Spinner
 import com.example.converter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var bindingClass: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingClass = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(bindingClass.root)
-        with(bindingClass) {
-
-
-            *lengthButton.setOnCheckedChangeListener { buttonView, isChecked ->
-                output.text = "Len"
-                spinnerConnection(inputSpinner, R.array.lenNames)
-            }
-
-            weightButton.setOnCheckedChangeListener { buttonView, isChecked ->
-                output.text = "weight"
-            }
-
-            bindingClass.currencyButton.setOnCheckedChangeListener { buttonView, isChecked ->
-                output.text = "currency"
-            }
-
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        with(binding) {
+            myRadioGroup.setOnCheckedChangeListener(::onRadioGroupCheckedChange)
+            myRadioGroup.check(lengthButton.id)
         }
     }
+
+    private fun onRadioGroupCheckedChange(radioGroup : RadioGroup, radioId : Int) = with(binding){
+        when(radioId){
+            lengthButton.id -> {
+                spinnerConnection(spinner = inputSpinner, textArrayResId = R.array.lenNames)
+                spinnerConnection(spinner = outputSpinner, textArrayResId = R.array.lenNames)
+            }
+            weightButton.id -> {
+                spinnerConnection(spinner = inputSpinner, textArrayResId = R.array.weightNames)
+                spinnerConnection(spinner = outputSpinner, textArrayResId = R.array.weightNames)
+            }
+            currencyButton.id -> {
+                spinnerConnection(spinner = inputSpinner, textArrayResId = R.array.currencyNames)
+                spinnerConnection(spinner = outputSpinner, textArrayResId = R.array.currencyNames)
+            }
+        }
+    }
+
 
     private fun spinnerConnection(spinner: Spinner, textArrayResId : Int){//функция для подключения строкового массива в спиннер
         ArrayAdapter.createFromResource(
