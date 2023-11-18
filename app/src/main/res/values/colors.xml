@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="ui_backround">#C9C9CD</color>
+    <color name="text">#212139</color>
+    <color name="radio_normal">#9393C6</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="icons">#665D8C</color>
 </resources>

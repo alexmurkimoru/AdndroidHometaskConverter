@@ -1,18 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:id="@+id/my_radio_group"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <RadioButton
+            android:id="@+id/length_button"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/custom_radio_selector"
+            android:button="@color/black"
+            android:drawableTop="@drawable/ic_len"
+            android:text="Длина"
+            android:textAlignment="center"
+            android:textColor="@drawable/custom_radio_text"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/weight_button"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/custom_radio_selector"
+            android:button="@color/black"
+            android:drawableTop="@drawable/ic_weight"
+            android:text="Вес"
+            android:textAlignment="center"
+            android:textColor="@drawable/custom_radio_text"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/currency_button"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/custom_radio_selector"
+            android:button="@color/black"
+            android:drawableTop="@drawable/ic_currency"
+            android:text="Валюта"
+            android:textAlignment="center"
+            android:textColor="@drawable/custom_radio_text"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/number_input"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/text"
+        android:ems="10"
+        android:hint="Введите значение"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/text" />
+
+    <Spinner
+        android:id="@+id/input_spinner"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/converting_button"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/custom_radio_selector"
+        android:drawableLeft="@drawable/converting_button"
+        android:text="Рассчитать"
+        android:textAllCaps="false"
+        android:textColor="@color/text"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/output_spinner"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="zaglushka"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textSize="18sp" />
+
+</LinearLayout>

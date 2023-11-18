@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Converter</string>
+    <string name="head">Добрый день!</string>
+    <string-array name="currencyNames">
+        <item>Российский рубль</item>
+        <item>Доллар США</item>
+        <item>Сербский динар</item>
+        <item>Евро</item>
+    </string-array>
+    <string-array name="lenNames">
+        <item>см</item>
+        <item>дм</item>
+        <item>м</item>
+        <item>км</item>
+        <item>дюйм</item>
+        <item>ярд</item>
+        <item>миля</item>
+    </string-array>
+    <string-array name="weightNames">
+        <item>мг</item>
+        <item>г</item>
+        <item>кг</item>
+        <item>тонна</item>
+        <item>унция</item>
+        <item>фунт</item>
+    </string-array>
 </resources>
